@@ -1,0 +1,9 @@
+const CACHE='zr-v3';
+const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png','./img/cmd-card.jpg','./img/abs-card.jpg','./img/abs-hero.jpg','./img/absolut-logo.jpg','./img/session-poster.jpg','./img/karzakova.jpg','./img/ignatova.jpg','./img/nurmatova.jpg'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting();});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))));self.clients.claim();});
+self.addEventListener('fetch',e=>{
+  const u=new URL(e.request.url);
+  if(e.request.method!=='GET'||u.origin!==location.origin||u.pathname.endsWith('.mp4')) return; // таблицу и внешние ссылки не трогаем
+  e.respondWith(fetch(e.request).then(r=>{const c=r.clone();caches.open(CACHE).then(x=>x.put(e.request,c));return r;}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))));
+});

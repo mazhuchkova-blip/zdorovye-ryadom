@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Здоровье рядом</title>
+<meta name="description" content="Анализы и врачи CMD и массаж «Абсолют» в одном здании, Лесной Городок. Запись в одно касание.">
+<meta name="theme-color" content="#FBF6EF">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Здоровье рядом">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EF; --card:#FFFFFF; --cream:#F4EADD; --sand:#E8D7C2; --line:#EADFD1;
+  --ink:#3A2B22; --ink2:#7B675A;
+  --warm:#A9663F; --warm-d:#8C5233; --warm-soft:#F6E9DE;
+  --blue:#3E8DCB; --blue-d:#2C75B0; --blue-soft:#E7F1F9;
+  --green:#4E8C6A; --max:#6B57D6; --tg:#2AA3DC;
+  --r:22px; --shadow:0 1px 2px rgba(80,50,30,.05),0 8px 24px rgba(80,50,30,.07);
+  --serif:"Lora",Georgia,serif; --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.5 var(--sans);padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;line-height:1.2;font-weight:600}
+h1,h2{font-family:var(--serif)}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+.hide{display:none!important}
+
+/* шапка */
+header.top{padding:calc(18px + env(safe-area-inset-top)) 0 6px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:44px;height:44px;border-radius:14px;background:var(--cream);display:grid;place-items:center;flex:none}
+.brand h1{font-size:25px}
+.brand p{margin:1px 0 0;font-size:14px;color:var(--ink2)}
+.status{margin-top:14px;display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);padding:6px 13px;border-radius:99px;font-size:14px;color:var(--ink2)}
+.dot{width:8px;height:8px;border-radius:50%;background:#58B07E}
+.dot.off{background:#E0A15E}
+main{padding-top:14px}
+.screen{display:none}
+.screen.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* большие карточки направлений */
+.dir{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:16px;background:var(--card)}
+.dir .pic{position:relative;height:178px;background:var(--cream) center/cover no-repeat}
+.dir .pic .tag{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.92);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:600}
+.dir .body{padding:16px 18px 18px}
+.dir h2{font-size:23px;margin-bottom:4px}
+.dir p{margin:0 0 14px;color:var(--ink2);font-size:15px}
+.dir.cmd .pic{background-color:#E7F1F9;background-position:center 30%}
+.team{display:flex;align-items:center;gap:10px;margin:-2px 0 12px;font-size:14px;color:var(--ink2)}
+.team .av{display:flex}
+.team .av span{width:34px;height:34px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background:#E3EDF6 center top/cover;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.team .av span:first-child{margin-left:0}
+.dir.cmd .tag{color:var(--blue-d)}
+.dir.abs .tag{color:var(--warm-d)}
+.dir.abs .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(58,43,34,.25))}
+.abs-logo{position:absolute;right:14px;bottom:-26px;width:64px;height:64px;border-radius:50%;background:#FBF3E8 center/cover;border:3px solid #fff;z-index:2;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+
+.btns{display:grid;gap:10px}
+.btns.two{grid-template-columns:1fr 1fr}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;border-radius:16px;font-weight:700;font-size:16px;border:0;cursor:pointer;width:100%;font-family:inherit;padding:0 12px;text-align:center}
+.btn svg{width:21px;height:21px;flex:none}
+.btn.call-cmd{background:var(--blue);color:#fff}
+.btn.call-abs{background:var(--warm);color:#fff}
+.btn.max{background:var(--max);color:#fff}
+.btn.tg{background:var(--tg);color:#fff}
+.btn.site{background:var(--blue-soft);color:var(--blue-d)}
+.btn.soft-b{background:var(--blue-soft);color:var(--blue-d)}
+.btn.soft-w{background:var(--warm-soft);color:var(--warm-d)}
+.btn.soft{background:var(--cream);color:var(--ink)}
+
+/* акции */
+.sec-t{font-family:var(--serif);font-size:20px;margin:6px 2px 10px}
+.promos{display:flex;gap:10px;overflow-x:auto;margin:0 -16px 18px;padding:2px 16px 6px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.promos::-webkit-scrollbar{display:none}
+.promo{flex:0 0 78%;max-width:300px;scroll-snap-align:start;border-radius:18px;padding:15px 16px;background:var(--card);border:1px solid var(--line)}
+.promo.b{background:var(--blue-soft);border-color:#CFE3F3}
+.promo.w{background:var(--warm-soft);border-color:#EED8C6}
+.promo b{display:block;font-size:16px;margin-bottom:3px}
+.promo span{font-size:14px;color:var(--ink2)}
+
+/* общие блоки */
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;margin-bottom:14px}
+.card h2{font-size:21px;margin-bottom:6px}
+.card p.sub{margin:0 0 14px;color:var(--ink2);font-size:15px}
+.install{background:var(--cream);border-radius:var(--r);padding:18px;margin-bottom:14px;display:none}
+.install.show{display:block}
+.install b{display:block;margin-bottom:4px;font-family:var(--serif);font-size:18px}
+.install p{margin:0 0 12px;font-size:15px;color:var(--ink2)}
+.pagehead{margin:2px 2px 14px}
+.pagehead h2{font-size:26px}
+.pagehead p{margin:4px 0 0;color:var(--ink2);font-size:15px}
+.search{width:100%;min-height:52px;border-radius:16px;border:1px solid var(--line);padding:0 16px;font:inherit;background:#fff;color:var(--ink)}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:12px -16px;padding:0 16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:99px;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer}
+.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.list{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .nm{font-size:16px}
+.row .ds{font-size:13px;color:var(--ink2);margin-top:2px}
+.row .pr{font-weight:700;white-space:nowrap}
+.note{font-size:13px;color:var(--ink2);margin:0 4px 14px}
+.empty{padding:22px 16px;color:var(--ink2);text-align:center}
+
+/* врачи */
+.doc{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:12px;display:flex;align-items:center;gap:14px;padding:12px}
+.doc .ph{width:88px;height:88px;flex:none;border-radius:16px;background:#E3EDF6 center top/cover no-repeat;display:grid;place-items:center;font-family:var(--serif);font-size:26px;color:var(--blue-d)}
+.doc .in{flex:1;min-width:0}
+.doc h3{font-size:17px;line-height:1.25}
+.doc .sp{color:var(--blue-d);font-size:14px;font-weight:600;margin-top:4px}
+.doc .ex{color:var(--ink2);font-size:13px;margin-top:2px}
+.doc .chev{flex:none;color:#B9AEA4;font-size:24px;padding-right:4px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);font-size:15px;font-weight:600;margin:0 0 12px}
+.dphoto{width:100%;aspect-ratio:1/1;max-height:420px;border-radius:24px;background:#E3EDF6 center top/cover no-repeat;margin-bottom:16px;box-shadow:var(--shadow)}
+.dname{font-family:var(--serif);font-size:26px;line-height:1.2}
+.dspec{color:var(--blue-d);font-weight:700;margin-top:6px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.facts span{background:var(--blue-soft);color:var(--blue-d);border-radius:99px;padding:6px 12px;font-size:14px;font-weight:600}
+.card ul.svc{margin:0;padding-left:18px;font-size:15px}
+.card ul.svc li{margin-bottom:6px}
+.edu{font-size:14px;color:var(--ink2)}
+.edu div{margin-bottom:8px}
+.gal{display:flex;gap:10px;overflow-x:auto;margin:0 -16px 18px;padding:2px 16px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 46%;max-width:220px;aspect-ratio:3/4;object-fit:cover;border-radius:18px;scroll-snap-align:start;background:var(--cream)}
+.vid{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;background:#000;position:relative}
+.vid video{display:block;width:100%;max-height:560px;object-fit:cover}
+.vid .cap{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700;color:var(--warm-d)}
+
+/* массаж */
+.hero-abs{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px;background:var(--card)}
+.hero-abs .pic{height:200px;background:var(--cream) center/cover no-repeat;position:relative}
+.hero-abs .body{padding:18px}
+.hero-abs h2{font-size:25px;margin-bottom:6px}
+.hero-abs p{margin:0 0 14px;color:var(--ink2);font-size:15px}
+.what{background:var(--warm-soft);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.what h3{font-family:var(--serif);font-size:19px;margin-bottom:6px}
+.what p{margin:0;font-size:15px;color:var(--ink)}
+.dev{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:12px;display:flex;gap:14px;padding:14px;align-items:center}
+.dev .im{width:92px;height:92px;flex:none;border-radius:16px;background:#F3EEE8 center/cover no-repeat;display:grid;place-items:center}
+.dev .im svg{width:40px;height:40px}
+.dev h3{font-size:17px}
+.dev p{margin:4px 0 0;font-size:14px;color:var(--ink2)}
+.src{font-size:12px;color:var(--ink2);margin:-4px 4px 16px}
+details{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:14px}
+summary{padding:16px 18px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--ink2);font-size:20px;line-height:1}
+details[open] summary:after{content:"−"}
+details .in{padding:0 18px 16px;font-size:15px;color:var(--ink2)}
+details ul{margin:0;padding-left:18px}
+
+/* контакты */
+.kv{display:grid;gap:12px;margin:10px 0 14px}
+.kv span{display:block;font-size:13px;color:var(--ink2)}
+.kv b{font-weight:600}
+.howto{margin:0;padding-left:18px;font-size:15px;color:var(--ink2)}
+.howto li{margin-bottom:6px}
+
+/* нижнее меню */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:10}
+nav.tabs .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+nav.tabs a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--ink2);padding:6px 0;border-radius:14px}
+nav.tabs a svg{width:24px;height:24px}
+nav.tabs a.on{color:var(--ink);background:var(--cream)}
+nav.tabs a.on.b{color:var(--blue-d);background:var(--blue-soft)}
+nav.tabs a.on.w{color:var(--warm-d);background:var(--warm-soft)}
+
+.sheet{position:fixed;inset:0;background:rgba(40,25,15,.4);display:none;align-items:flex-end;z-index:20}
+.sheet.show{display:flex}
+.sheet .box{background:#fff;width:100%;max-width:560px;margin:0 auto;border-radius:24px 24px 0 0;padding:22px 18px calc(20px + env(safe-area-inset-bottom))}
+.sheet h3{font-family:var(--serif);font-size:21px;margin-bottom:4px}
+.sheet p{margin:0 0 14px;color:var(--ink2);font-size:15px}
+.steps{margin:0 0 16px;padding-left:20px;font-size:16px}
+.steps li{margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">
+    <div class="mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-7.5-10.4A4.4 4.4 0 0 1 12 8a4.4 4.4 0 0 1 7.5 2.6C19.5 16.4 12 21 12 21z" stroke="#A9663F"/><path d="M12 11v5M9.5 13.5h5" stroke="#3E8DCB"/></svg></div>
+    <div><h1>Здоровье рядом</h1><p>Анализы, врачи и массаж в одном здании</p></div>
+  </div>
+  <div class="status"><span class="dot" id="stDot"></span><span id="stText">…</span></div>
+</div></header>
+
+<main class="wrap">
+
+<!-- ГЛАВНАЯ -->
+<section class="screen on" id="s-home">
+  <div class="dir cmd">
+    <div class="pic" id="cmdPic"><span class="tag">CMD · лаборатория и врачи</span></div>
+    <div class="body">
+      <h2>Анализы и врачи</h2>
+      <p>Анализы, гинеколог, УЗИ. Срочные: сдали утром, результат вечером.</p>
+      <a class="team" href="#doctors"><span class="av" id="teamAv"></span><span id="teamTxt">Врачи CMD</span></a>
+      <div class="btns two"><a class="btn call-cmd" data-call="cmd">Позвонить</a><a class="btn soft-b" href="#tests">Цены</a></div>
+    </div>
+  </div>
+
+  <div class="dir abs">
+    <div class="pic" id="absPic"><span class="tag">Кабинет «Абсолют»</span><div class="abs-logo" id="absLogo"></div></div>
+    <div class="body">
+      <h2>Аппаратный массаж</h2>
+      <p>Аппараты FOHOW и термокапсула. Прогрев, расслабление, лёгкость в спине.</p>
+      <div class="btns two"><a class="btn call-abs" data-call="massage" href="#massage">Записаться</a><a class="btn soft-w" href="#massage">Цены</a></div>
+    </div>
+  </div>
+
+  <div class="sec-t">Сейчас выгодно</div>
+  <div class="promos" id="promos"></div>
+
+  <div class="install" id="install">
+    <b>Сохраните на экран телефона</b>
+    <p>Иконка появится рядом с другими приложениями. Следующая запись займёт одно касание, скачивать ничего не нужно.</p>
+    <button class="btn soft" data-install>Добавить на экран</button>
+  </div>
+</section>
+
+<!-- АНАЛИЗЫ -->
+<section class="screen" id="s-tests">
+  <div class="pagehead"><h2>Цены на анализы</h2><p>Популярные анализы в CMD. Срочные сдаются в будни до 09:10.</p></div>
+  <input class="search" id="q" type="search" placeholder="Найти: ферритин, ТТГ, витамин D…" autocomplete="off">
+  <div class="chips" id="cats"></div>
+  <div class="list" id="tests"></div>
+  <p class="note">Цены справочные. Точную стоимость и подготовку подскажет администратор.</p>
+  <div class="card"><h2>Записаться на анализы</h2><p class="sub">Позвоните или напишите, подберём удобное время.</p><div data-book="cmd"></div></div>
+</section>
+
+<!-- ВРАЧИ -->
+<section class="screen" id="s-doctors">
+  <div class="pagehead"><h2>Врачи CMD</h2><p>Принимают в Лесном Городке, Фасадная, 2к2.</p></div>
+  <div id="docs"></div>
+  <div class="card"><h2>Записаться к врачу</h2><p class="sub">Администратор подскажет ближайшее свободное время.</p><div data-book="cmd"></div></div>
+</section>
+
+<!-- КАРТОЧКА ВРАЧА -->
+<section class="screen" id="s-doctor">
+  <a class="back" href="#doctors">← Все врачи</a>
+  <div id="docOne"></div>
+</section>
+
+<!-- МАССАЖ -->
+<section class="screen" id="s-massage">
+  <div class="hero-abs">
+    <div class="pic" id="absPic2"></div>
+    <div class="body">
+      <h2>Массаж «Абсолют»</h2>
+      <p>Кабинет в одном помещении с CMD. Первый сеанс со скидкой 10%.</p>
+      <div data-book="massage"></div>
+    </div>
+  </div>
+
+  <div class="what">
+    <h3>Что такое FOHOW</h3>
+    <p>FOHOW — компания, которая выпускает массажное оборудование. В кабинете мастер работает руками в специальных перчатках, а аппарат передаёт через них мягкую вибрацию. Термокапсула добавляет инфракрасный прогрев.</p>
+  </div>
+
+  <div class="sec-t">Как проходит сеанс</div>
+  <div class="vid"><span class="cap">Наш кабинет</span><video src="img/session.mp4" poster="img/session-poster.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+  <div class="gal">
+    <img src="img/g-room.jpg" alt="Кабинет «Абсолют»" loading="lazy">
+    <img src="img/g-device.jpg" alt="Биоэнергомассажёр FOHOW" loading="lazy">
+    <img src="img/g-back.jpg" alt="Массаж спины в перчатках" loading="lazy">
+    <img src="img/g-face.jpg" alt="Ультразвуковая процедура для лица" loading="lazy">
+    <img src="img/g-panel.jpg" alt="Панель аппарата" loading="lazy">
+  </div>
+
+  <div class="sec-t">Аппараты</div>
+  <div class="dev"><div class="im" style="background-image:url('img/dev-bem3.jpg')"></div><div><h3>Биоэнергомассажёр 3.0</h3><p>Мастер работает в специальных перчатках, через них идут мягкие микровибрации. Снимает зажатость спины и шеи.</p></div></div>
+  <div class="dev"><div class="im" style="background-image:url('img/dev-bem1.jpg');background-size:contain;background-color:#fff"></div><div><h3>Биоэнергомассажёр 1.0</h3><p>Второй аппарат кабинета, работает по тому же принципу.</p></div></div>
+  <div class="dev"><div class="im" data-img="tim"><svg viewBox="0 0 24 24" fill="none" stroke="#A9663F" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 5c0 1 1 1 1 2M12 4c0 1 1 1 1 2M16 5c0 1 1 1 1 2"/></svg></div><div><h3>Термокапсула</h3><p>Инфракрасный прогрев всего тела, ощущение тепла и лёгкости.</p></div></div>
+  <div class="dev"><div class="im" style="background-image:url('img/g-face.jpg')"></div><div><h3>Ультразвуковая подтяжка</h3><p>Уход за кожей лица, шеи, декольте и рук.</p></div></div>
+
+  <div class="sec-t">Цены</div>
+  <div class="list" id="mprices"></div>
+
+  <details>
+    <summary>Противопоказания</summary>
+    <div class="in"><ul>
+      <li>Беременность и менструальный период</li>
+      <li>Острые инфекции, высокая температура</li>
+      <li>Онкологические заболевания</li>
+      <li>Заболевания с риском кровотечения</li>
+      <li>Тяжёлая гипертония, серьёзные болезни сердца, лёгких, почек</li>
+      <li>Период после операций на сердце</li>
+      <li>Остеопороз</li>
+      <li>Металлические имплантаты в зоне воздействия</li>
+      <li>Алкогольное опьянение</li>
+    </ul><p style="margin:10px 0 0">Если сомневаетесь, посоветуйтесь с врачом. Гинеколог и УЗИ здесь же, в CMD.</p></div>
+  </details>
+  <div class="card"><h2>Записаться на массаж</h2><p class="sub">Первый сеанс со скидкой 10%.</p><div data-book="massage"></div></div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="screen" id="s-contacts">
+  <div class="pagehead"><h2>Как нас найти</h2><p id="addr"></p></div>
+  <div class="card">
+    <div class="btns"><a class="btn soft" id="mapBtn" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
+    <ol class="howto" style="margin-top:14px">
+      <li>Электричка с Киевского вокзала до станции «Лесной Городок», дальше через подземный переход.</li>
+      <li>Автобус 442 от метро «Парк Победы» или маршрутка 103К до остановки «Лесной Городок», 170 м пешком.</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h2 style="color:var(--blue-d)">CMD · анализы и врачи</h2>
+    <div class="kv"><div><span>Часы работы</span><b id="hCmd"></b></div><div><span>Телефон</span><b id="pCmd"></b></div></div>
+    <div data-book="cmd"></div>
+  </div>
+  <div class="card">
+    <h2 style="color:var(--warm-d)">«Абсолют» · массаж</h2>
+    <div class="kv"><div><span>Часы работы</span><b id="hMas"></b></div><div><span>Телефон</span><b id="pMas"></b></div></div>
+    <div data-book="massage"></div>
+  </div>
+  <div class="install" id="install2">
+    <b>Сохраните на экран телефона</b>
+    <p>Чтобы в следующий раз записаться в одно касание.</p>
+    <button class="btn soft" data-install>Добавить на экран</button>
+  </div>
+</section>
+
+</main>
+
+<nav class="tabs"><div class="in">
+  <a href="#home" data-t="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Главная</a>
+  <a href="#tests" data-t="tests" class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-9V3"/></svg>Анализы</a>
+  <a href="#doctors" data-t="doctors" class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg>Врачи</a>
+  <a href="#massage" data-t="massage" class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-7.5-10.4A4.4 4.4 0 0 1 12 8a4.4 4.4 0 0 1 7.5 2.6C19.5 16.4 12 21 12 21z"/></svg>Массаж</a>
+  <a href="#contacts" data-t="contacts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Контакты</a>
+</div></nav>
+
+<div class="sheet" id="iosSheet"><div class="box">
+  <h3>Добавить на экран «Домой»</h3>
+  <p>Пара касаний, и приложение будет под рукой:</p>
+  <ol class="steps">
+    <li>Нажмите «Поделиться» внизу экрана Safari (квадрат со стрелкой вверх)</li>
+    <li>Выберите «На экран “Домой”»</li>
+    <li>Нажмите «Добавить»</li>
+  </ol>
+  <button class="btn soft" id="iosClose">Понятно</button>
+</div></div>
+
+<script>
+/* === НАСТРОЙКА === ID Google-таблицы (доступ «Все, у кого есть ссылка» → «Читатель») */
+var SHEET_ID = "1w7jLCyEMJ30YvNVExp7dx84oz6LBZqeJdgujdVzixY4";
+/* Картинки оформления (не из таблицы) */
+var IMG = {
+  cmd: "img/cmd-card.jpg",
+  absCard: "img/abs-card.jpg",
+  absHero: "img/abs-hero.jpg",
+  absLogo: "img/absolut-logo.jpg"
+};
+var FALLBACK_CSV = "Раздел,Название,Описание,Цена,Ссылка,Запись,Услуги,Образование\nКонтакты,Телефон CMD,+7 (495) 153-72-46,,,,,\nКонтакты,MAX CMD,,,,,,\nКонтакты,Часы CMD,Пн–Пт 07:00–19:00 · Сб–Вс 07:00–17:00,,,,,\nКонтакты,Телефон массаж,+7 (903) 003-58-18,,,,,\nКонтакты,Telegram массаж,,,https://t.me/+0ylT1mp-CsFhZTIy,,,\nКонтакты,MAX массаж,,,,,,\nКонтакты,Часы массаж,По записи,,,,,\nКонтакты,Адрес,\"Лесной Городок, ул. Фасадная, 2, корп. 2\",,https://yandex.ru/maps/org/cmd_tsentr_molekulyarnoy_diagnostiki/218851901787/,,,\nАкция,Скидка 10% на анализы,Скидка на лабораторные анализы в CMD Лесной Городок,,,,,\nАкция,Срочные анализы,\"В будни сдайте до 09:10, результат придёт в тот же день до 19:00\",,,,,\nАкция,−10% на первый массаж,Скидка на первый сеанс в кабинете «Абсолют»,,,,,\nВрач,Карзакова Дарья Валерьевна,\"Акушер-гинеколог, врач УЗИ · стаж 7 лет · приём с 18 лет\",,img/karzakova.jpg,https://www.cmd-online.ru/meditsinskie-uslugi/vrachi/karzakova-darya-valerevna/,Консультация акушера-гинеколога; Ультразвуковая диагностика,\"2019 · Кемеровский государственный медицинский университет, лечебное дело; 2026 · НМИЦ АГП им. В.И. Кулакова, ординатура по акушерству и гинекологии\"\nВрач,Игнатова Татьяна Петровна,Врач УЗИ · стаж 13 лет · дети с 14 лет,,img/ignatova.jpg,https://www.cmd-online.ru/meditsinskie-uslugi/vrachi/ignatova-tatyana-petrovna/,УЗИ органов брюшной полости; УЗИ почек и мочевыделительной системы; УЗИ щитовидной железы; УЗИ лимфатических узлов; УЗИ органов малого таза у женщин; УЗИ при беременности,\"2013 · РНИМУ им. Н.И. Пирогова, лечебное дело; 2014 · интернатура по акушерству и гинекологии; 2015 · МОНИКИ им. М.Ф. Владимирского, переподготовка по ультразвуковой диагностике\"\nВрач,Нурматова Эльвира Махмудовна,Врач УЗИ · стаж 22 года · дети с 3 лет,,img/nurmatova.jpg,https://www.cmd-online.ru/meditsinskie-uslugi/vrachi/nurmatova-elvira-makhmudovna/,УЗИ щитовидной железы; УЗИ сосудов; УЗИ органов малого таза у женщин; УЗИ органов брюшной полости; УЗИ мочеполовой системы у мужчин; УЗИ молочных желёз; УЗИ почек; УЗИ лимфатических узлов,\"1993 · Саратовский государственный медицинский институт, лечебное дело; 2005 · переподготовка по ультразвуковой диагностике; 2024 · РМАНПО, повышение квалификации и аккредитация по ультразвуковой диагностике\"\nАнализ,\"Общий анализ крови + СОЭ, лейкоформула\",Кровь,820,,,,\nАнализ,Общий анализ мочи,Кровь и моча,445,,,,\nАнализ,Глюкоза,Биохимия,335,,,,\nАнализ,Гликированный гемоглобин (HbA1c),Биохимия,870,,,,\nАнализ,Холестерин общий,Биохимия,375,,,,\nАнализ,ЛПНП-холестерин,Биохимия,395,,,,\nАнализ,ЛПВП-холестерин,Биохимия,425,,,,\nАнализ,Триглицериды,Биохимия,385,,,,\nАнализ,АЛТ,Биохимия,350,,,,\nАнализ,АСТ,Биохимия,350,,,,\nАнализ,Билирубин общий,Биохимия,390,,,,\nАнализ,Креатинин,Биохимия,385,,,,\nАнализ,Мочевая кислота,Биохимия,385,,,,\nАнализ,Ферритин,Биохимия,795,,,,\nАнализ,Железо,Биохимия,380,,,,\nАнализ,С-реактивный белок (высокочувствительный),Биохимия,660,,,,\nАнализ,Витамин D (25-OH),Витамины,2175,,,,\nАнализ,Витамин B12,Витамины,1120,,,,\nАнализ,ТТГ,Гормоны,620,,,,\nАнализ,Т4 свободный,Гормоны,685,,,,\nАнализ,Антитела к ТПО,Гормоны,840,,,,\nАнализ,Инсулин,Гормоны,930,,,,\nАнализ,Пролактин,Гормоны,740,,,,\nАнализ,Эстрадиол,Гормоны,740,,,,\nАнализ,ФСГ,Гормоны,740,,,,\nАнализ,ЛГ,Гормоны,740,,,,\nАнализ,Прогестерон,Гормоны,750,,,,\nАнализ,Тестостерон,Гормоны,730,,,,\nАнализ,Антимюллеров гормон (АМГ),Гормоны,1840,,,,\nАнализ,ПСА общий,Мужское здоровье,810,,,,\nАнализ,Спермограмма,Мужское здоровье,2150,,,,\nАнализ,Урогенитальные инфекции у мужчин (комплекс ПЦР),Мужское здоровье,2495,,,,\nАнализ,Урогенитальные инфекции у женщин (комплекс ПЦР),Женское здоровье,3615,,,,\nАнализ,ВПЧ-тест расширенный,Женское здоровье,2025,,,,\nАнализ,ПАП-тест жидкостный,Женское здоровье,2140,,,,\nАнализ,Мазок на флору (микроскопия),Женское здоровье,590,,,,\nАнализ,Протромбин + МНО,Свёртываемость,530,,,,\nАнализ,D-димер,Свёртываемость,1830,,,,\nАнализ,Группа крови + резус-фактор,Кровь и моча,895,,,,\nАнализ,ВИЧ (антитела + антиген p24),Инфекции,605,,,,\nАнализ,Гепатит B (HBsAg),Инфекции,550,,,,\nАнализ,Гепатит C (anti-HCV),Инфекции,790,,,,\nАнализ,Сифилис (RPR),Инфекции,485,,,,\nАнализ,Хеликобактер — дыхательный тест,Инфекции,2595,,,,\nАнализ,Кал на яйца гельминтов и цисты,Инфекции,635,,,,\nАнализ,Биохимическое обследование (программа),Комплексы,5095,,,,\nМассаж,БЭМ тела,60 мин,4500,,,,\nМассаж,БЭМ «Стройный силуэт»,60 мин,4600,,,,\nМассаж,БЭМ «Лифтинг груди»,15 мин,1125,,,,\nМассаж,БЭМ «Молодость+»,\"120 мин · УЗ-подтяжка лица, уход, проработка головы\",8500,,,,\nМассаж,УЗ-подтяжка лица (пептидный комплекс),60 мин,4600,,,,\nМассаж,УЗ-подтяжка лица и декольте,30 мин,2400,,,,\nМассаж,УЗ-подтяжка рук,30 мин,2000,,,,\nМассаж,Термокапсула,30 мин,1400,,,,\nМассаж,Термокапсула,45 мин,2000,,,,\nМассаж,Комплекс: БЭМ тела + термокапсула,90 мин,5500,,,,\nМассаж,Согревающее масло HerbaV Oil (дополнение),,750,,,,\n";
+
+var ICON = {
+  call:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
+  msg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.5-5.4A8.5 8.5 0 1 1 21 12z"/></svg>',
+  tg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5 2.5 11.8l6 2.2 2.3 6.5 3.4-4.2 5 3.7z"/><path d="m8.5 14 9-6.5"/></svg>',
+  web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>'
+};
+
+function parseCSV(t){
+  var rows=[],row=[],f="",q=false;
+  for(var i=0;i<t.length;i++){var c=t[i];
+    if(q){ if(c=='"'){ if(t[i+1]=='"'){f+='"';i++;} else q=false; } else f+=c; }
+    else if(c=='"') q=true; else if(c==','){row.push(f);f="";}
+    else if(c=='\n'||c=='\r'){ if(c=='\r'&&t[i+1]=='\n')i++; row.push(f);rows.push(row);row=[];f=""; }
+    else f+=c;}
+  if(f!==""||row.length){row.push(f);rows.push(row);}
+  return rows;
+}
+function toItems(csv){
+  var r=parseCSV(csv); if(!r.length) return [];
+  var h=r[0].map(function(x){return x.trim().toLowerCase();});
+  var I={s:h.indexOf("раздел"),n:h.indexOf("название"),d:h.indexOf("описание"),p:h.indexOf("цена"),l:h.indexOf("ссылка"),z:h.indexOf("запись"),u:h.indexOf("услуги"),e:h.indexOf("образование")};
+  if(I.s<0||I.n<0) return [];
+  return r.slice(1).map(function(x){
+    var g=function(k){return I[k]>=0&&x[I[k]]!=null?String(x[I[k]]).trim():"";};
+    return {s:g("s"),n:g("n"),d:g("d"),p:g("p"),l:g("l"),z:g("z"),u:g("u"),e:g("e")};
+  }).filter(function(o){return o.s&&o.n;});
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function price(p){ if(!p) return ""; if(!/^\s*[\d\s.,]+\s*₽?\s*$/.test(p)) return esc(p); var n=Number(p.replace(/[^\d.,]/g,"").replace(",",".")); return n.toLocaleString("ru-RU")+" ₽"; }
+function tel(p){ return "tel:"+String(p).replace(/[^\d+]/g,""); }
+function bg(el,url){ if(!el||!url) return; var im=new Image(); im.onload=function(){el.style.backgroundImage='url("'+url+'")'; el.classList.add("loaded");}; im.src=url; }
+
+var D={};
+function render(items){
+  var by=function(s){return items.filter(function(o){return o.s.toLowerCase()==s;});};
+  var C={}; by("контакты").forEach(function(o){C[o.n.toLowerCase()]={v:o.d,l:o.l};});
+  var c=function(k){return C[k]||{v:"",l:""};};
+  D={c:c};
+
+  var phone={cmd:c("телефон cmd").v, massage:c("телефон массаж").v};
+  document.querySelectorAll("[data-call]").forEach(function(a){ var p=phone[a.getAttribute("data-call")]; if(p){a.href=tel(p); a.innerHTML=ICON.call+(a.textContent.trim()||"Позвонить");} });
+
+  var book={
+    cmd:[["call-cmd",phone.cmd?tel(phone.cmd):"","Позвонить в CMD",ICON.call],
+         ["max",c("max cmd").l,"Написать в MAX",ICON.msg]],
+    massage:[["call-abs",phone.massage?tel(phone.massage):"","Позвонить",ICON.call],
+             ["tg",c("telegram массаж").l,"Telegram",ICON.tg],
+             ["max",c("max массаж").l,"MAX",ICON.msg]]
+  };
+  document.querySelectorAll("[data-book]").forEach(function(el){
+    var list=book[el.getAttribute("data-book")].filter(function(b){return b[1];});
+    var html=list.map(function(b){
+      var ext=b[0].indexOf("call")==0?"":' target="_blank" rel="noopener"';
+      return '<a class="btn '+b[0]+'" href="'+esc(b[1])+'"'+ext+'>'+b[3]+esc(b[2])+'</a>';
+    });
+    if(html.length==3) el.innerHTML='<div class="btns">'+html[0]+'<div class="btns two">'+html[1]+html[2]+'</div></div>';
+    else el.innerHTML='<div class="btns'+(html.length==2?' two':'')+'">'+html.join("")+'</div>';
+  });
+
+  document.getElementById("promos").innerHTML=by("акция").map(function(o){
+    var cls=/массаж|абсолют/i.test(o.n+o.d)?"w":"b";
+    return '<div class="promo '+cls+'"><b>'+esc(o.n)+'</b><span>'+esc(o.d)+'</span></div>';
+  }).join("");
+
+  // анализы
+  var tests=by("анализ"), cats=["Все"], cur="Все";
+  tests.forEach(function(o){ if(o.d&&cats.indexOf(o.d)<0) cats.push(o.d); });
+  var cb=document.getElementById("cats");
+  cb.innerHTML=cats.map(function(x){return '<button class="chip'+(x==cur?' on':'')+'">'+esc(x)+'</button>';}).join("");
+  var draw=function(){
+    var q=document.getElementById("q").value.trim().toLowerCase();
+    var f=tests.filter(function(o){return (cur=="Все"||o.d==cur)&&(!q||o.n.toLowerCase().indexOf(q)>=0);});
+    document.getElementById("tests").innerHTML=f.length?f.map(function(o){
+      return '<div class="row"><div><div class="nm">'+esc(o.n)+'</div><div class="ds">'+esc(o.d)+'</div></div><div class="pr">'+price(o.p)+'</div></div>';
+    }).join(""):'<div class="empty">Этого анализа нет в списке.<br>Позвоните, подскажем цену и подготовку.</div>';
+  };
+  cb.onclick=function(e){ var b=e.target.closest(".chip"); if(!b) return; cur=b.textContent;
+    [].forEach.call(cb.children,function(x){x.classList.toggle("on",x==b);}); draw(); };
+  document.getElementById("q").oninput=draw; draw();
+
+  // врачи
+  var docs=by("врач"); D.docs=docs;
+  document.getElementById("docs").innerHTML=docs.map(function(o,i){
+    var parts=o.d.split("·").map(function(s){return s.trim();});
+    var ini=o.n.split(/\s+/).slice(0,2).map(function(w){return w[0];}).join("");
+    return '<a class="doc" href="#doctor-'+i+'"><div class="ph" data-ph="'+i+'">'+esc(ini)+'</div><div class="in"><h3>'+esc(o.n)+'</h3>'+
+      '<div class="sp">'+esc(parts[0]||"")+'</div>'+(parts.length>1?'<div class="ex">'+esc(parts.slice(1).join(" · "))+'</div>':'')+'</div><span class="chev">›</span></a>';
+  }).join("")||'<div class="card"><p class="sub">Список врачей уточняйте у администратора.</p></div>';
+  docs.forEach(function(o,i){ if(!o.l) return; var el=document.querySelector('[data-ph="'+i+'"]'); var im=new Image(); im.onload=function(){el.style.backgroundImage='url("'+o.l+'")'; el.textContent="";}; im.src=o.l; });
+  document.getElementById("teamAv").innerHTML=docs.filter(function(o){return o.l;}).slice(0,4).map(function(o){return '<span style="background-image:url(\''+esc(o.l)+'\')"></span>';}).join("");
+  var specs=[]; docs.forEach(function(o){ (/гинеколог/i.test(o.d)&&specs.indexOf("гинеколог")<0)&&specs.push("гинеколог"); (/УЗИ/.test(o.d)&&specs.indexOf("УЗИ")<0)&&specs.push("УЗИ"); });
+  document.getElementById("teamTxt").textContent=docs.length?(docs.length+" "+(docs.length==1?"врач":docs.length<5?"врача":"врачей")+(specs.length?": "+specs.join(", "):"")+" ›"):"Врачи CMD";
+  renderDoctor();
+
+  // массаж
+  document.getElementById("mprices").innerHTML=by("массаж").map(function(o){
+    return '<div class="row"><div><div class="nm">'+esc(o.n)+'</div>'+(o.d?'<div class="ds">'+esc(o.d)+'</div>':'')+'</div><div class="pr">'+price(o.p)+'</div></div>';
+  }).join("");
+
+  document.getElementById("addr").textContent=c("адрес").v;
+  var mb=document.getElementById("mapBtn"); if(c("адрес").l) mb.href=c("адрес").l; else mb.classList.add("hide");
+  document.getElementById("hCmd").textContent=c("часы cmd").v||"—";
+  document.getElementById("pCmd").textContent=c("телефон cmd").v||"—";
+  document.getElementById("hMas").textContent=c("часы массаж").v||"—";
+  document.getElementById("pMas").textContent=c("телефон массаж").v||"—";
+  status();
+}
+
+/* картинки оформления */
+bg(document.getElementById("cmdPic"),IMG.cmd);
+bg(document.getElementById("absPic"),IMG.absCard);
+bg(document.getElementById("absPic2"),IMG.absHero);
+bg(document.getElementById("absLogo"),IMG.absLogo);
+
+
+function renderDoctor(){
+  var m=(location.hash||"").match(/^#doctor-(\d+)$/); if(!m||!D.docs) return;
+  var o=D.docs[+m[1]]; var box=document.getElementById("docOne");
+  if(!o){ box.innerHTML='<div class="card"><p class="sub">Врач не найден.</p></div>'; return; }
+  var parts=o.d.split("·").map(function(s){return s.trim();});
+  var list=function(s){return s.split(";").map(function(x){return x.trim();}).filter(Boolean);};
+  var phone=D.c("телефон cmd").v, max=D.c("max cmd").l;
+  box.innerHTML=(o.l?'<div class="dphoto" style="background-image:url(\''+esc(o.l)+'\')"></div>':'')+
+    '<div class="dname">'+esc(o.n)+'</div><div class="dspec">'+esc(parts[0]||"")+'</div>'+
+    '<div class="facts">'+parts.slice(1).map(function(p){return '<span>'+esc(p)+'</span>';}).join("")+(o.p?'<span>Приём: '+price(o.p)+'</span>':'')+'</div>'+
+    '<div class="card"><h2>Записаться</h2><div class="btns">'+
+      (o.z?'<a class="btn call-cmd" href="'+esc(o.z)+'" target="_blank" rel="noopener">'+ICON.web+'Онлайн на сайте CMD</a>':'')+
+      '<div class="btns two">'+(phone?'<a class="btn soft-b" href="'+tel(phone)+'">'+ICON.call+'Позвонить</a>':'')+(max?'<a class="btn max" href="'+esc(max)+'" target="_blank" rel="noopener">'+ICON.msg+'MAX</a>':'')+'</div></div></div>'+
+    (o.u?'<div class="card"><h2>Что делает</h2><ul class="svc">'+list(o.u).map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul></div>':'')+
+    (o.e?'<div class="card"><h2>Образование</h2><div class="edu">'+list(o.e).map(function(x){return '<div>'+esc(x)+'</div>';}).join("")+'</div></div>':'');
+}
+
+function status(){
+  var t=(D.c?D.c("часы cmd").v:"")||"";
+  var order=["пн","вт","ср","чт","пт","сб","вс"], now=new Date(), di=(now.getDay()+6)%7, m=now.getHours()*60+now.getMinutes();
+  var re=/(пн|вт|ср|чт|пт|сб|вс)\s*[–-]\s*(пн|вт|ср|чт|пт|сб|вс)\s*(\d{1,2}):(\d{2})\s*[–-]\s*(\d{1,2}):(\d{2})/gi, x, hit=null;
+  while((x=re.exec(t))){ var a=order.indexOf(x[1].toLowerCase()), b=order.indexOf(x[2].toLowerCase());
+    if(di>=a&&di<=b){hit={o:+x[3]*60+ +x[4],c:+x[5]*60+ +x[6]};break;} }
+  var dot=document.getElementById("stDot"), st=document.getElementById("stText");
+  if(!hit){ st.textContent="Лесной Городок, Фасадная, 2к2"; dot.className="dot"; return; }
+  var hh=function(v){return String(Math.floor(v/60)).padStart(2,"0")+":"+String(v%60).padStart(2,"0");};
+  if(m>=hit.o&&m<hit.c){ st.textContent="Открыто до "+hh(hit.c)+" · Фасадная, 2к2"; dot.className="dot"; }
+  else { st.textContent="Откроется в "+hh(hit.o)+" · Фасадная, 2к2"; dot.className="dot off"; }
+}
+
+(function load(){
+  var cached=null; try{cached=localStorage.getItem("zr_csv");}catch(e){}
+  var first=toItems(cached||""); render(first.length?first:toItems(FALLBACK_CSV));
+  if(!SHEET_ID||SHEET_ID.indexOf("__")==0) return;
+  fetch("https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&gid=0&t="+Date.now())
+    .then(function(r){ if(!r.ok) throw 0; return r.text(); })
+    .then(function(txt){ var it=toItems(txt); if(it.length<5) return; render(it); try{localStorage.setItem("zr_csv",txt);}catch(e){} })
+    .catch(function(){});
+})();
+
+function route(){
+  var h=(location.hash||"#home").slice(1); var tab=h;
+  if(/^doctor-\d+$/.test(h)){ h="doctor"; tab="doctors"; renderDoctor(); }
+  if(!document.getElementById("s-"+h)) h=tab="home";
+  document.querySelectorAll(".screen").forEach(function(s){s.classList.toggle("on",s.id=="s-"+h);});
+  document.querySelectorAll("nav.tabs a").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-t")==tab);});
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route); route(); setInterval(status,60000);
+
+var deferred=null, ua=navigator.userAgent;
+var isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform=="MacIntel"&&navigator.maxTouchPoints>1);
+var standalone=window.matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+function showInstall(){ if(standalone) return; ["install","install2"].forEach(function(id){document.getElementById(id).classList.add("show");}); }
+window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); deferred=e; showInstall(); });
+if(isIOS) showInstall();
+document.querySelectorAll("[data-install]").forEach(function(b){ b.onclick=function(){
+  if(deferred){ deferred.prompt(); deferred.userChoice.finally(function(){deferred=null;}); }
+  else document.getElementById("iosSheet").classList.add("show"); }; });
+document.getElementById("iosClose").onclick=function(){document.getElementById("iosSheet").classList.remove("show");};
+document.getElementById("iosSheet").onclick=function(e){ if(e.target==this) this.classList.remove("show"); };
+if("serviceWorker" in navigator && location.protocol=="https:"){ navigator.serviceWorker.register("sw.js").catch(function(){}); }
+</script>
+</body>
+</html>
