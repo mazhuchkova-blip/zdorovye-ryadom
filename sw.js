@@ -1,5 +1,5 @@
-const CACHE='zr-v4';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png','./img/cmd-card.jpg','./img/abs-card.jpg','./img/abs-hero.jpg','./img/absolut-logo.jpg','./img/session-poster.jpg','./img/karzakova.jpg','./img/ignatova.jpg','./img/nurmatova.jpg'];
+const CACHE='zr-v5';
+const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png','./img/cmd-card.jpg','./img/abs-card.jpg','./img/abs-hero.jpg','./img/absolut-logo.jpg','./img/session-poster.jpg','./img/karzakova.jpg','./img/ignatova.jpg','./img/nurmatova.jpg','./img/vinter.png','./img/guskova.jpg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))));self.clients.claim();});
 self.addEventListener('fetch',e=>{
